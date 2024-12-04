@@ -50,26 +50,7 @@ void log_client_event(const char *event_type, client_t *client) {
     fclose(log_file);
 }
 
-// Debug logging function (optional, more verbose)
-void debug_log(const char *message) {
-    #ifdef DEBUG
-    FILE *log_file = fopen(LOG_FILE, "a");
-    if (!log_file) {
-        perror("Failed to open log file");
-        return;
-    }
 
-    // Get current timestamp
-    time_t now;
-    time(&now);
-    char *timestamp = ctime(&now);
-    timestamp[strcspn(timestamp, "\n")] = 0;  // Remove newline
-
-    // Write debug log entry
-    fprintf(log_file, "[%s] DEBUG: %s\n", timestamp, message);
-    fclose(log_file);
-    #endif
-}
 
 // Log system errors
 void error_log(const char *error_type, const char *message) {
