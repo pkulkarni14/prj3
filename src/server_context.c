@@ -72,6 +72,6 @@ int initialize_server(int port) {
         close(server_socket);
         return -1;
     }
-    printf("Connected to the Server on port %d\n", port);
+    printf("Connected to the Server on port %d\n",port);
     return server_socket;
 }
